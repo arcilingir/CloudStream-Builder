@@ -5,7 +5,7 @@ import com.lagradost.cloudstream3.utils.*
 import org.jsoup.nodes.Document
 
 class OrnekProvider : MainAPI() {
-    override var mainUrl = "https://ornek.site"
+    override var mainUrl = "https://www.ddizi.im/"
     override var name = "Örnek Site"
     override val hasMainPage = true
     override var lang = "tr"
