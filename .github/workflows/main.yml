@@ -19,17 +19,19 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+       - name: Setup Gradle 8.5
+         uses: gradle/actions/setup-gradle@v3
+         with:
+           gradle-version: '8.5'
         
-      - name: Regenerate Wrapper if missing
-        run: gradle wrapper
-           
+      - name: Regenerate Wrapper with Gradle 8.5
+        run: gradle wrapper --gradle-version 8.5
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Build Plugins
-        run: ./gradlew make --stacktrace --info
+        run: ./gradlew make --stacktrace
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
